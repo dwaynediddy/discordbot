@@ -3,9 +3,9 @@ const fetch = require('node-fetch')
 const client = new 
 Discord.Client()
 
-const sadWords = ["boss", 'bossing']
+const nextBoss = ['what boss should i do next?']
 
-const encouragements = [
+const bosses = [
   'Barrows',
   "Calisto",
   "Commander Zilyana",
@@ -46,9 +46,9 @@ client.on('message', msg => {
     msg.reply('spoon you say? Jimmy or Scooter?')
   }
 
-  if (sadWords.some(word => msg.content.includes(word))) {
-    const encouragement = encouragements[Math.floor(Math.random() * encouragements.length)]
-    msg.reply(encouragement)
+  if (nextBoss.some(word => msg.content.includes(word))) {
+    const boss = bosses[Math.floor(Math.random() * bosses.length)]
+    msg.reply(boss)
   }
 })
 
